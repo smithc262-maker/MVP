@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+</head>
+<body>
+    <h1>How helpful was this site?</h1>
+    <div id="survey">
+        <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" rating="1">Not Helpful</button>
+    </div>
+    <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" rating="2">Somewhat Helpful</button>
+    </div>
+    <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" rating="3">Helpful</button>
+    </div>
+    <div class="col-6 col-md-3">
+        <button class="btn btn-outline-primary w-100" rating="4">Very Helpful</button>
+    </div>
+    
+    </div>
+    <script src="script.js">
+        let buttons = document.querySelectorAll('#survey button');
+
+buttons.forEach(button => {
+    button.addEventListener('click', function() {
+        alert(`Button ${button.textContent} clicked!`);
+    });
+    if (button.textContent === 'Not Helpful') {
+        button.addEventListener('click', function() {
+            alert('We appreciate your feedback and will strive to improve.');
+        });
+    }
+    else if (button.textContent === 'Somewhat Helpful') {
+        button.addEventListener('click', function() {
+            alert('Thank you for your feedback! Sorry it was not more helpful.');
+        });
+    }
+    else if (button.textContent === 'Helpful') {
+        button.addEventListener('click', function() {
+            alert('Thank you for your feedback! We are glad you found it helpful.');
+        });
+    }
+    else if (button.textContent === 'Very Helpful') {
+        button.addEventListener('click', function() {
+            alert('Thank you for your feedback! We are thrilled you found it very helpful.');
+        });
+    }
+});
+    </script>
+    
+</body>
+<footer>
+    <p>Go to <a href="index.html">page 1</a></p>
+    <p>Go to <a href="index2.html">page 2</a></p>
+</footer>
+</html>
